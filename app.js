@@ -37,8 +37,8 @@ const rejectBtn = document.getElementById('filter-reject');
 function toggle(id){
   currentState = id;
   allBtn.classList.remove('bg-green-400' , "text-white");
-  interviewBtn.classList.remove('bg-black' , "text-white");
-  rejectBtn.classList.remove('bg-black' , "text-white");
+  interviewBtn.classList.remove('bg-green-400' , "text-white");
+  rejectBtn.classList.remove('bg-green-400' , "text-white");
 
   allBtn.classList.add('bg-gray-200' ,"text-black");
   interviewBtn.classList.add('bg-gray-200' , "text-black");
@@ -48,7 +48,7 @@ function toggle(id){
   const select = document.getElementById(id);
   console.log(select.innerText)
   select.classList.remove('bg-gray-200' , "text-black");
-  select.classList.add('bg-black' , "text-white");
+  select.classList.add('bg-green-400' , "text-white");
 
   if(id == "filter-interview"){
     totalJob.classList.add('hidden')
