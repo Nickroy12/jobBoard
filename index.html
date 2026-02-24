@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Board</title>
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"  />
+
+</head>
+
+<body class="bg-slate-50">
+
+
+<header class="bg-white shadow-sm py-6 sticky top-0">
+  <h1 class="text-4xl font-bold text-center text-green-600 tracking-wide">
+    Job Board
+  </h1>
+
+  <div class="container mx-auto mt-8 grid  grid-cols-3 gap-6 px-4">
+
+    <div class="bg-white rounded-xl shadow-md md:p-6 text-center hover:shadow-lg transition">
+      <span id="jobCount" class="text-3xl font-bold text-green-600 block">0</span>
+      <p class="text-slate-500 font-semibold mt-2">Total Jobs</p>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md md:p-6 text-center hover:shadow-lg transition">
+      <span id="InterviewJob" class="text-3xl font-bold text-blue-600 block">0</span>
+      <p class="text-slate-500 font-semibold mt-2">Interview</p>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md md:p-6 text-center hover:shadow-lg transition">
+      <span id="rejectedJob" class="text-3xl font-bold text-red-500 block">0</span>
+      <p class="text-slate-500 font-semibold mt-2">Rejected</p>
+    </div>
+
+  </div>
+  <div class="flex justify-between container mx-auto">
+    <div>
+      Available Job
+    </div>
+    <div>
+           <h2 id="TotalJob"  class="text-slate-600 font-semibold ">12 Jobs Found</h2>
+    </div>
+  </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 ml-7">
+
+    <div  class="tabs tabs-boxed flex gap-5 bg-white shadow-sm rounded-xl">
+<button onclick="toggle('filter-all')" id="filter-all" class="bg-black text-white px-5 py-2 cursor-pointer">All</button>
+<button onclick="toggle('filter-interview')" id="filter-interview" class="bg-gray-200 px-5 py-2 cursor-pointer">Interview</button>
+<button onclick="toggle('filter-reject')" id="filter-reject" class="bg-gray-200 px-5 py-2 cursor-pointer">Rejected</button>
+    </div>
+
+ 
+   
+
+  </div>
+</header>
+
+
+<main class="container mx-auto mt-12 px-4">
+
+
+
+  <section id="filterBox" class="hidden">
+
+  </section>
+
+
+<section id="jobPost" class="container mx-auto mt-8 px-4 space-y-6">
+
+
+
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Programming Hero
+          </h2>
+          <p class="text-slate-600 role">MERN Stack Developer</p>
+        </div>
+          <button class="state">Not Apliied</button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+          Remote • Full-time • Salary: ৳20,000
+        </p>
+
+        <p class="text-slate-600 req">
+          Strong backend knowledge required. Experience with Node.js and MongoDB preferred.
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Twelve 30 Cafe
+          </h2>
+          <p class="text-slate-600 role">Senior chief</p>
+        </div>
+       <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+          Salary: ৳50,000
+        </p>
+
+        <p class="text-slate-600 req">
+         10 year Experience to cook  Italian , thai , Bengali dish
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+  
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Meta life
+          </h2>
+          <p class="text-slate-600 role">Filed Visitor</p>
+        </div>
+       <button class="state"></button>    
+        <p class="text-slate-500 facilities text-sm font-medium">
+         Salary: ৳34,000
+        </p>
+
+        <p class="text-slate-600 req">
+        Have highly skilled on this field
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+   
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            HTS Garments
+          </h2>
+          <p class="text-slate-600 role">Power-plant In-charge</p>
+        </div>
+         <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+        Full-time • Salary: ৳40,000
+        </p>
+
+        <p class="text-slate-600 req">
+          Have highly skilled on this field
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+  </div>
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Arong
+          </h2>
+          <p class="text-slate-600 role">Sales Man</p>
+        </div>
+        <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+         • Salary: ৳20,000
+        </p>
+
+        <p class="text-slate-600 req">
+          High communication Skill
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Dibbel LTD
+          </h2>
+          <p class="text-slate-600 role">Marketing Adviser</p>
+        </div>
+        <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+       Salary: ৳120,000
+        </p>
+
+        <p class="text-slate-600 req">
+         10 year Experience to work any frame
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            VFX Console
+          </h2>
+          <p class="text-slate-600 role">Graphics Designer</p>
+        </div>
+        <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+          Remote • Full-time • Salary: ৳60,000
+        </p>
+
+        <p class="text-slate-600 req">
+        Must have 10+ Experience On this field 
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+  
+    <div class="flex flex-col md:flex-row justify-between gap-6 bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+     
+      <div class="space-y-3">
+        <div>
+          <h2 class="text-2xl company font-bold text-slate-800">
+            Airbus
+          </h2>
+          <p class="text-slate-600 role">Senior Executive</p>
+        </div>
+       <button class="state"></button>
+        <p class="text-slate-500 facilities text-sm font-medium">
+           Full-time • Salary: ৳200,000
+        </p>
+
+        <p class="text-slate-600 req">
+         Highly expert Maintain chain of Command
+        </p>
+
+        <div class="flex gap-3 pt-2">
+          <button class="btn btn-success btn-sm">Interview</button>
+          <button class="btn btn-error btn-sm">Rejected</button>
+        </div>
+      </div>
+
+      <div class="flex items-start justify-end">
+        <button class="btn btn-outline btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+
+    </div>
+ 
+
+</section>
+</main>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
